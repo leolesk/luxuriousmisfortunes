@@ -1,0 +1,83 @@
+# BLOCKS
+tile.luxuriousmisfortunes.totem_brace.name=Totem Brace
+tile.luxuriousmisfortunes.totem_mouth.name=Totem Mouth
+
+tile.luxuriousmisfortunes.totem_persona.name=Persona
+tile.luxuriousmisfortunes.totem_mouth_variant.name=Persona
+
+tile.luxuriousmisfortunes.totem_tooth.name=Totem Tooth
+tile.luxuriousmisfortunes.totem_tooth_holding.name=Totem Tooth
+
+tile.luxuriousmisfortunes.totem_pole.name=Totem Pole
+tile.luxuriousmisfortunes.totem_stone.name=Totem Stone
+
+tile.luxuriousmisfortunes.emerald_ore_depleted.name=Depleted Emerald Ore
+tile.luxuriousmisfortunes.iron_ore_depleted.name=Depleted Iron Ore
+tile.luxuriousmisfortunes.gold_ore_depleted.name=Depleted Gold Ore
+tile.luxuriousmisfortunes.coal_ore_depleted.name=Depleted Coal Ore
+tile.luxuriousmisfortunes.diamond_ore_depleted.name=Depleted Diamond Ore
+
+# ITEMS
+
+item.luxuriousmisfortunes.experiment.name=Experiment 114
+
+item.luxuriousmisfortunes.porcelain_jug.name=Porcelain Jug
+item.luxuriousmisfortunes.porcelain_bowl.name=Porcelain Bowl
+item.luxuriousmisfortunes.porcelain_plate.name=Porcelain Plate
+item.luxuriousmisfortunes.porcelain_scalpel.name=Porcelain Scalpel
+item.luxuriousmisfortunes.porcelain_meal.name=Shredded Chitin
+item.luxuriousmisfortunes.porcelain_tissue.name=Marbled Patty
+
+item.luxuriousmisfortunes.nacre_feather.name=Nacre Feather
+item.luxuriousmisfortunes.porcelain_chitin.name=Porcelain Chitin
+item.luxuriousmisfortunes.velvet_leather.name=Velvet Leather
+item.luxuriousmisfortunes.pyrite_crystal.name=Pyrite Crystal
+
+item.luxuriousmisfortunes.animated_custard.name=Animated Custard
+item.luxuriousmisfortunes.rum_bottle.name=Rum Bottle
+item.luxuriousmisfortunes.pyrite_gum.name=Pyrite Gum
+item.luxuriousmisfortunes.pyrite_fishing_rod.name=Pyrite Fishing Rod
+
+item.luxuriousmisfortunes.porcelain.name=Porcelain Capsid
+item.luxuriousmisfortunes.nacre.name=Nacre Larvae
+item.luxuriousmisfortunes.velvet.name=Velvet Spores
+item.luxuriousmisfortunes.pyrite.name=Pyrite Hearth
+
+
+# GUI
+itemGroup.tabLuxuriousMisfortunes=Luxurious Misfortunes
+category.luxuriousmisfortunes=Luxurious Misfortunes
+key.luxuriousmisfortunes.put_subarmor_on=Put Subarmor on
+
+# TOOLTIPS
+tooltip.luxuriousmisfortunes.element_unbreakable=§5This block is a part of an unbreakable structure. Only for creative.
+
+tooltip.luxuriousmisfortunes.porcelain_plate.description=§5Pick up the cake with [Shift + RMB] while in hand.
+tooltip.luxuriousmisfortunes.porcelain_bowl.description=§5Combine with a soup in the crafting grid to fill.
+tooltip.luxuriousmisfortunes.porcelain_jug.description=§5Combine with a potion in the crating grid to fill.
+tooltip.luxuriousmisfortunes.porcelain_scalpel.description=§5Removes vital body coverings from animals without harming them.
+tooltip.luxuriousmisfortunes.porcelain_meal.description=§5Causes rapid cell division in plants resistant to conventional fertilizers.
+tooltip.luxuriousmisfortunes.porcelain_tissue.description=§5The fungus strangely restructures plant cells, creating muscle-like structures and animal fats.
+
+tooltip.luxuriousmisfortunes.experiment.description=§5A warm and fluffy mass with a slight hint of raw meat.
+tooltip.luxuriousmisfortunes.experiment_conducted.description=§5The mass squeaks and tries to slip out of your hands... but now it smells like Play-Doh.
+
+# FIRST ENCOUNTER LINES
+scene.luxuriousmisfortunes.totem_persona.line_0=§oAh, who do I see! An uninvited guest. But an expected one...
+scene.luxuriousmisfortunes.totem_persona.line_1=§oPeace be with you, sweetheart.
+scene.luxuriousmisfortunes.totem_persona.line_2=§oIt must have been chance that brought you here. As it has many before you.
+scene.luxuriousmisfortunes.totem_persona.line_3=§oBut you won't leave here empty-handed, believe me.
+scene.luxuriousmisfortunes.totem_persona.line_4=§oLook, see these teeth? Take a closer look.
+scene.luxuriousmisfortunes.totem_persona.line_5=§oFour objects. Four essences. Four materials.
+scene.luxuriousmisfortunes.totem_persona.line_6=§oYou can take any one. Take it, and you'll learn a whole new craft.
+scene.luxuriousmisfortunes.totem_persona.line_7=§oAnd yet, we must be honest with each other. At some point, you should come here and place the payment in my mouth. It's that simple.
+scene.luxuriousmisfortunes.totem_persona.line_8=§oIf you listen closely to the received matter, you could hear a ticking sound. Like a clock. It's very convenient.
+scene.luxuriousmisfortunes.totem_persona.line_9=§oI'll hear that ticking from hundreds of chunks away, so don't forget to pay, dear. Just a heads up.
+
+# INTERACTIONS
+interaction.luxuriousmisfortunes.totem_persona=§oThis object looks fragile... I should pick it up really carefully
+interaction.luxuriousmisfortunes.totem_brace=§oIt seems like there should be something else here...
+interaction.luxuriousmisfortunes.totem_tooth.pyrite=§oThe object is warm and solid to the touch. It shimmers in the light. Is it... metal?
+interaction.luxuriousmisfortunes.totem_tooth.velvet=§oThe object is soft and pleasant to the touch. It's made of something precious.
+interaction.luxuriousmisfortunes.totem_tooth.nacre=§oThe object emits a faint glow and has a perfectly cubic shape.
+interaction.luxuriousmisfortunes.totem_tooth.porcelain=§oThe object is cold and hard. It should be something fragile...

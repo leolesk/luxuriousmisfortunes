@@ -1,60 +1,53 @@
 package luxuriousmisfortunes.common.blocks;
 
 import luxuriousmisfortunes.api.Main;
-import luxuriousmisfortunes.common.BlockBase;
+import luxuriousmisfortunes.common.basic.BlockTotemStructure;
 import luxuriousmisfortunes.init.BlockInit;
-import luxuriousmisfortunes.init.ItemInit;
-import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
-public class BlockTotemBrace extends BlockBase {
+public class BlockTotemBrace extends BlockTotemStructure {
 
-    public static final PropertyDirection FACING = PropertyDirection.create("facing");
+    public static String name = "totem_brace";
+
+    TextComponentTranslation braceInspect = new TextComponentTranslation("interaction" + "." + Main.MODID + "." + name);
 
     public BlockTotemBrace(String name) {
         super(name, Material.ROCK);
-
-        this.setBlockUnbreakable();
-        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
-
     }
 
     @Override
-    protected BlockStateContainer createBlockState()
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
     {
-        return new BlockStateContainer(this, new IProperty[] {FACING});
+
+        for (EnumFacing x : EnumFacing.VALUES) {
+            if (worldIn.getBlockState(pos.offset(x)).getBlock() instanceof BlockTotemPersona)
+                return false;
+        }
+
+        if (worldIn.isRemote) {
+            if (playerIn.getHeldItem(hand).getItem() != Item.getItemFromBlock(BlockInit.TOTEM_HEAD_INACTIVE)) {
+                playerIn.sendStatusMessage(new TextComponentString(I18n.format(this.braceInspect.getFormattedText())), true);
+            }
+            return true;
+        }
+
+        return false;
     }
 
-    @Override
-    public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-
-    {
-        return this.getDefaultState().withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(pos, placer).getOpposite());
-    }
-
-    @Override
-    public int getMetaFromState(IBlockState state)
-    {
-        int i = 0;
-        i = i | state.getValue(FACING).getIndex();
-
-        return i;
-    }
-
-    @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
-        return this.getDefaultState().withProperty(FACING, EnumFacing.byIndex(meta & 7));
-    }
 
 }

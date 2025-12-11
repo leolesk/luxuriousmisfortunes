@@ -1,4 +1,4 @@
-package luxuriousmisfortunes.common;
+package luxuriousmisfortunes.common.basic;
 
 import luxuriousmisfortunes.api.Main;
 import luxuriousmisfortunes.init.BlockInit;
@@ -19,7 +19,6 @@ public class BlockBase extends Block {
         this.setHardness(this.blockHardness);
 
         BlockInit.BLOCKS.add(this);
-        ItemInit.ITEMS.add(new ItemBlock(this).setRegistryName(name));
     }
 
 

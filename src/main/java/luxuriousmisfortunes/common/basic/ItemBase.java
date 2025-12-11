@@ -1,4 +1,4 @@
-package luxuriousmisfortunes.common;
+package luxuriousmisfortunes.common.basic;
 
 import luxuriousmisfortunes.api.Main;
 import luxuriousmisfortunes.init.ItemInit;

@@ -1,20 +1,31 @@
 package luxuriousmisfortunes.api;
 
-import luxuriousmisfortunes.common.tiles.TileEntityTotemPersona;
-import luxuriousmisfortunes.handlers.GenericEventHandler;
+import luxuriousmisfortunes.client.render.entity.RenderGolemPyrite;
+import luxuriousmisfortunes.client.render.entity.RenderNacreGhast;
+import luxuriousmisfortunes.client.render.entity.RenderPorcelainSpider;
+import luxuriousmisfortunes.client.render.entity.RenderVelvetCow;
+import luxuriousmisfortunes.client.render.entity.RenderVelvetSlime;
+import luxuriousmisfortunes.common.capabilities.CapabilityChewingGum;
+import luxuriousmisfortunes.common.capabilities.CapabilitySubarmorEquipped;
+import luxuriousmisfortunes.common.entities.EntityGolemPyrite;
+import luxuriousmisfortunes.common.entities.EntityNacreGhast;
+import luxuriousmisfortunes.common.entities.EntityPorcelainSpider;
+import luxuriousmisfortunes.common.entities.EntityVelvetCow;
+import luxuriousmisfortunes.common.entities.EntityVelvetSlime;
+import luxuriousmisfortunes.handlers.RegistryHandler;
+import luxuriousmisfortunes.init.ItemInit;
+import luxuriousmisfortunes.init.KeybindInit;
+import luxuriousmisfortunes.network.packets.Network;
 import luxuriousmisfortunes.network.proxy.CommonProxy;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -30,24 +41,51 @@ public class Main {
     @SidedProxy(clientSide = "luxuriousmisfortunes.network.proxy.ClientProxy", serverSide = "luxuriousmisfortunes.network.proxy.CommonProxy")
     public static CommonProxy proxy;
 
+    @Mod.Instance
+    public static Main instance;
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
-        MinecraftForge.EVENT_BUS.register(new GenericEventHandler());
+        RegistryHandler.registerEntities();
+        Network.registerPackets();
+        CapabilityChewingGum.register();
+        CapabilitySubarmorEquipped.register();
 
-        GameRegistry.registerTileEntity(TileEntityTotemPersona.class, new ResourceLocation(MODID, "wheel"));
+        RenderingRegistry.registerEntityRenderingHandler(
+                EntityGolemPyrite.class,
+                renderManager -> new RenderGolemPyrite(renderManager)
+                );
+        RenderingRegistry.registerEntityRenderingHandler(
+                EntityNacreGhast.class,
+                renderManager -> new RenderNacreGhast(renderManager)
+                );
+        RenderingRegistry.registerEntityRenderingHandler(
+                EntityPorcelainSpider.class,
+                renderManager -> new RenderPorcelainSpider(renderManager)
+                );
+        RenderingRegistry.registerEntityRenderingHandler(
+                EntityVelvetCow.class,
+                renderManager -> new RenderVelvetCow(renderManager)
+                );
+        RenderingRegistry.registerEntityRenderingHandler(
+                EntityVelvetSlime.class,
+                renderManager -> new RenderVelvetSlime(renderManager)
+                );
     }
 
+    @SideOnly(Side.CLIENT)
     @EventHandler
     public void Init(FMLInitializationEvent event) {
-        proxy.init(event);
+        KeybindInit.init();
     }
+
 
     public static CreativeTabs tabMod = new CreativeTabs("tabLuxuriousMisfortunes") {
         @Override
         @SideOnly(Side.CLIENT)
         public ItemStack createIcon() {
-            return new ItemStack(Items.BAKED_POTATO);
+            return new ItemStack(ItemInit.TOTEM_BODY);
         }
     };
 

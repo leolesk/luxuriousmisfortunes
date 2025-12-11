@@ -1,12 +1,14 @@
 package luxuriousmisfortunes.network.proxy;
 
-import luxuriousmisfortunes.common.tiles.TileEntityTotemPersona;
-import luxuriousmisfortunes.common.tiles.TileEntityTotemPersonaRenderer;
+import java.util.ArrayList;
+
+import luxuriousmisfortunes.api.Main;
+import luxuriousmisfortunes.init.ItemInit;
+import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -14,8 +16,12 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ClientProxy extends CommonProxy {
 
     @Override
-    public void init(FMLInitializationEvent event) {
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTotemPersona.class, new TileEntityTotemPersonaRenderer());
+    public void registerItemVariants(Item item, int meta, String... names) {
+
+        for (int i = 0; i < meta; i++) {
+            ModelBakery.registerItemVariants(item, new ResourceLocation(Main.MODID, names[i]));
+        }
+
     }
 
     @Override

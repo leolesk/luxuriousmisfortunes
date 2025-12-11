@@ -17,12 +17,8 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 
 public class CommonProxy {
 
-    public void init(FMLInitializationEvent event) {
+    public void registerItemVariants(Item item, int meta, String... names) {}
 
-    }
-
-    public void registerItemRenderer(Item item, int meta, String id) {
-
-    }
+    public void registerItemRenderer(Item item, int meta, String id) {}
 
 }
