@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "luxuriousmisfortunes:totem_tooth", "x": 90},
+    "facing=south": { "model": "luxuriousmisfortunes:totem_tooth", "x": 90, "y": 180},
+    "facing=west":  { "model": "luxuriousmisfortunes:totem_tooth", "x": 90, "y": 270},
+    "facing=east":  { "model": "luxuriousmisfortunes:totem_tooth", "x": 90, "y": 90}
+  }
+}

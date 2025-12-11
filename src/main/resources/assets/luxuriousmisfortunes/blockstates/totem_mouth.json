@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "facing=north,is_shut=false": { "model": "luxuriousmisfortunes:totem_mouth", "x": 90},
+    "facing=south,is_shut=false": { "model": "luxuriousmisfortunes:totem_mouth", "x": 90, "y": 180},
+    "facing=west,is_shut=false":  { "model": "luxuriousmisfortunes:totem_mouth", "x": 90, "y": 270},
+    "facing=east,is_shut=false":  { "model": "luxuriousmisfortunes:totem_mouth", "x": 90, "y": 90},
+    "facing=north,is_shut=true": { "model": "luxuriousmisfortunes:totem_mouth_grates", "x": 90},
+    "facing=south,is_shut=true": { "model": "luxuriousmisfortunes:totem_mouth_grates", "x": 90, "y": 180},
+    "facing=west,is_shut=true":  { "model": "luxuriousmisfortunes:totem_mouth_grates", "x": 90, "y": 270},
+    "facing=east,is_shut=true":  { "model": "luxuriousmisfortunes:totem_mouth_grates", "x": 90, "y": 90}
+  }
+}

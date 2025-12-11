@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "facing=north,holding=0": { "model": "luxuriousmisfortunes:totem_tooth_holding_pyrite", "x": 90},
+    "facing=south,holding=0": { "model": "luxuriousmisfortunes:totem_tooth_holding_pyrite", "x": 90, "y": 180},
+    "facing=west,holding=0":  { "model": "luxuriousmisfortunes:totem_tooth_holding_pyrite", "x": 90, "y": 270},
+    "facing=east,holding=0":  { "model": "luxuriousmisfortunes:totem_tooth_holding_pyrite", "x": 90, "y": 90},
+    
+    "facing=north,holding=1": { "model": "luxuriousmisfortunes:totem_tooth_holding_porcelain", "x": 90},
+    "facing=south,holding=1": { "model": "luxuriousmisfortunes:totem_tooth_holding_porcelain", "x": 90, "y": 180},
+    "facing=west,holding=1":  { "model": "luxuriousmisfortunes:totem_tooth_holding_porcelain", "x": 90, "y": 270},
+    "facing=east,holding=1":  { "model": "luxuriousmisfortunes:totem_tooth_holding_porcelain", "x": 90, "y": 90},
+    
+    "facing=north,holding=2": { "model": "luxuriousmisfortunes:totem_tooth_holding_velvet", "x": 90},
+    "facing=south,holding=2": { "model": "luxuriousmisfortunes:totem_tooth_holding_velvet", "x": 90, "y": 180},
+    "facing=west,holding=2":  { "model": "luxuriousmisfortunes:totem_tooth_holding_velvet", "x": 90, "y": 270},
+    "facing=east,holding=2":  { "model": "luxuriousmisfortunes:totem_tooth_holding_velvet", "x": 90, "y": 90},
+    
+    "facing=north,holding=3": { "model": "luxuriousmisfortunes:totem_tooth_holding_nacre", "x": 90},
+    "facing=south,holding=3": { "model": "luxuriousmisfortunes:totem_tooth_holding_nacre", "x": 90, "y": 180},
+    "facing=west,holding=3":  { "model": "luxuriousmisfortunes:totem_tooth_holding_nacre", "x": 90, "y": 270},
+    "facing=east,holding=3":  { "model": "luxuriousmisfortunes:totem_tooth_holding_nacre", "x": 90, "y": 90}
+  }
+}

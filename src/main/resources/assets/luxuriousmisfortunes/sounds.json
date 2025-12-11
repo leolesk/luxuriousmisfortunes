@@ -1,0 +1,80 @@
+{
+  "scene.line_0": {
+    "category": "voice",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:scene/line_0", "stream": false }
+    ]
+  },
+  "scene.line_1": {
+    "category": "voice",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:scene/line_1", "stream": false }
+    ]
+  },
+  "scene.line_2": {
+    "category": "voice",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:scene/line_2", "stream": false }
+    ]
+  },
+  "scene.line_3": {
+    "category": "voice",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:scene/line_3", "stream": false }
+    ]
+  },
+  "scene.line_4": {
+    "category": "voice",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:scene/line_4", "stream": false }
+    ]
+  },
+  "scene.line_5": {
+    "category": "voice",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:scene/line_5", "stream": false }
+    ]
+  },
+  "scene.line_6": {
+    "category": "voice",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:scene/line_6", "stream": false }
+    ]
+  },
+  "scene.line_7": {
+    "category": "voice",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:scene/line_7", "stream": false }
+    ]
+  },
+  "scene.line_8": {
+    "category": "voice",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:scene/line_8", "stream": false }
+    ]
+  },
+  "scene.line_9": {
+    "category": "voice",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:scene/line_9", "stream": false }
+    ]
+  },
+  "grates_open": {
+    "category": "ambient",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:grates_open", "stream": false }
+    ]
+  },
+  "matters_appear": {
+    "category": "ambient",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:matters_appear", "stream": false }
+    ]
+  },
+  "persona_change": {
+    "category": "ambient",
+    "sounds": [
+      { "name": "luxuriousmisfortunes:persona_change", "stream": false }
+    ]
+  }
+}

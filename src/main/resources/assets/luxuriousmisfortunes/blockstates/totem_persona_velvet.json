@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "facing=north,is_locked=true": { "model": "luxuriousmisfortunes:totem_persona_velvet", "x": 90},
+    "facing=south,is_locked=true": { "model": "luxuriousmisfortunes:totem_persona_velvet", "x": 90, "y": 180},
+    "facing=west,is_locked=true":  { "model": "luxuriousmisfortunes:totem_persona_velvet", "x": 90, "y": 270},
+    "facing=east,is_locked=true":  { "model": "luxuriousmisfortunes:totem_persona_velvet", "x": 90, "y": 90},
+    "facing=up,is_locked=true":    { "model": "luxuriousmisfortunes:totem_persona_velvet"},
+    "facing=down,is_locked=true":  { "model": "luxuriousmisfortunes:totem_persona_velvet"},
+    
+    "facing=north,is_locked=false": { "model": "luxuriousmisfortunes:totem_persona_velvet", "x": 90},
+    "facing=south,is_locked=false": { "model": "luxuriousmisfortunes:totem_persona_velvet", "x": 90, "y": 180},
+    "facing=west,is_locked=false":  { "model": "luxuriousmisfortunes:totem_persona_velvet", "x": 90, "y": 270},
+    "facing=east,is_locked=false":  { "model": "luxuriousmisfortunes:totem_persona_velvet", "x": 90, "y": 90},
+    "facing=up,is_locked=false":    { "model": "luxuriousmisfortunes:totem_persona_velvet"},
+    "facing=down,is_locked=false":  { "model": "luxuriousmisfortunes:totem_persona_velvet"}
+  }
+}

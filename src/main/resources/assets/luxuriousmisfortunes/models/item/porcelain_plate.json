@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "luxuriousmisfortunes:items/porcelain_plate"
+  },
+  "overrides": [
+    {
+      "predicate": { "luxuriousmisfortunes:full": 1 },
+      "model": "luxuriousmisfortunes:item/porcelain_plate_full"
+    }
+  ]
+}
