@@ -1,4 +1,4 @@
-package luxuriousmisfortunes.common.items;
+package luxuriousmisfortunes.unfinished;
 
 import java.util.ArrayList;
 import java.util.List;

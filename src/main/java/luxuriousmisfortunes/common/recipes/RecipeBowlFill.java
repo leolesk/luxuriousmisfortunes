@@ -10,7 +10,7 @@ import net.minecraft.item.ItemSoup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
@@ -26,22 +26,24 @@ public class RecipeBowlFill extends IForgeRegistryEntry.Impl<IRecipe> implements
 
         for (int i = 0; i < inv.getSizeInventory(); i++) {
 
-            if (is_bowl && is_soup)
-                return true;
+            if (!inv.getStackInSlot(i).isEmpty()) {
+                if (!is_bowl && inv.getStackInSlot(i).getItem() instanceof ItemPorcelainBowl) {
 
-            if (!is_bowl && inv.getStackInSlot(i).getItem() instanceof ItemPorcelainBowl) {
+                    ItemStack bowl = inv.getStackInSlot(i);
+                    NBTTagCompound sub = bowl.getSubCompound(Main.MODID);
 
-                ItemStack bowl = inv.getStackInSlot(i);
-                NBTTagCompound sub = bowl.getOrCreateSubCompound(Main.MODID);
+                    is_bowl = (sub == null) || sub.getString("2").isEmpty();
+                } else if (!is_soup && inv.getStackInSlot(i).getItem() instanceof ItemSoup) {
+                    is_soup = true;
+                } else {
+                    is_soup = false;
+                    is_bowl = false;
+                }
 
-                is_bowl = (sub == null) || sub.getString("2").isEmpty();
-            } else if (!is_soup && inv.getStackInSlot(i).getItem() instanceof ItemSoup) {
-                is_soup = true;
             }
-
         }
 
-        return false;
+        return is_soup && is_bowl;
     }
 
 
@@ -55,10 +57,6 @@ public class RecipeBowlFill extends IForgeRegistryEntry.Impl<IRecipe> implements
         Integer soup_slot = null;
 
         for (int i = 0; i < inv.getSizeInventory(); i++) {
-
-            if (bowl != null && soup != null) {
-                break;
-            }
 
             ItemStack stack = inv.getStackInSlot(i);
 
@@ -75,39 +73,38 @@ public class RecipeBowlFill extends IForgeRegistryEntry.Impl<IRecipe> implements
 
         }
 
-        if (bowl != null && soup != null) {
+        if ((bowl != null && soup != null) && (soup_slot != null && bowl_slot != null)) {
 
             Integer slot_free = null;
 
             for (int i = 0; i < 3; i++) {
-                if (bowl.getOrCreateSubCompound(Main.MODID).getString(String.valueOf(i)).isEmpty()) {
+
+                NBTTagCompound nbt = bowl.getSubCompound(Main.MODID);
+
+                if (nbt == null || nbt.getString(String.valueOf(i)).isEmpty()) {
                     slot_free = i;
                     break;
                 }
             }
 
             if (slot_free != null) {
-                for (Item type : ItemPorcelainBowl.types) {
+                for (int i = 0; i < 3; i++) {
 
-                    String name_expected = type.getRegistryName().toString();
+                    String name_expected = ItemPorcelainBowl.types[i].getRegistryName().toString();
                     String name_actual = soup.getItem().getRegistryName().toString();
 
                     if (name_expected.equals(name_actual)) {
 
-                        NBTTagCompound nbt = bowl.getOrCreateSubCompound(Main.MODID);
-                        nbt.setString(String.valueOf(slot_free), name_actual);
+                        ItemStack result = bowl.copy();
+                        NBTTagCompound nbt = result.getOrCreateSubCompound(Main.MODID);
+                        nbt.setString(String.valueOf(slot_free), name_expected);
                         nbt.setDouble(ItemPorcelainBowl.key, 1);
 
-                        if (soup_slot != null && bowl_slot != null) {
-                            inv.removeStackFromSlot(soup_slot);
-                            inv.removeStackFromSlot(bowl_slot);
-                        }
-
-                        return bowl.copy();
+                        return result;
 
                     }
-
                 }
+
             }
         }
 
@@ -116,14 +113,29 @@ public class RecipeBowlFill extends IForgeRegistryEntry.Impl<IRecipe> implements
     }
 
     @Override
+    public NonNullList<ItemStack> getRemainingItems(InventoryCrafting inv)
+    {
+        NonNullList<ItemStack> result = NonNullList.withSize(inv.getSizeInventory(), ItemStack.EMPTY);
+
+        for (int i = 0; i < inv.getSizeInventory(); i++) {
+
+            ItemStack stack = inv.getStackInSlot(i);
+
+            if (stack.getItem() instanceof ItemSoup || stack.getItem() instanceof ItemPorcelainBowl) {
+                result.set(i, ItemStack.EMPTY);
+            }
+        }
+
+        return result;
+    }
+
+    @Override
     public boolean canFit(int width, int height) {
-        // TODO Auto-generated method stub
         return true;
     }
 
     @Override
     public ItemStack getRecipeOutput() {
-        // TODO Auto-generated method stub
         return new ItemStack(ItemInit.BOWL);
     }
 

@@ -7,6 +7,7 @@ import luxuriousmisfortunes.common.entities.EntityPorcelainSpider;
 import luxuriousmisfortunes.common.entities.EntityVelvetCow;
 import luxuriousmisfortunes.common.entities.EntityVelvetSlime;
 import luxuriousmisfortunes.common.recipes.RecipeBowlFill;
+import luxuriousmisfortunes.common.recipes.RecipeJugFill;
 import luxuriousmisfortunes.init.BlockInit;
 import luxuriousmisfortunes.init.EffectInit;
 import luxuriousmisfortunes.init.ItemInit;
@@ -40,6 +41,7 @@ public class RegistryHandler {
     @SubscribeEvent
     public static void onRecipeRegister(RegistryEvent.Register<IRecipe> event) {
         event.getRegistry().register(new RecipeBowlFill().setRegistryName(new ResourceLocation(Main.MODID, RecipeBowlFill.name)));
+        event.getRegistry().register(new RecipeJugFill().setRegistryName(new ResourceLocation(Main.MODID, RecipeJugFill.name)));
     }
 
     @SubscribeEvent

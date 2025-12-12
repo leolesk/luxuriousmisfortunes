@@ -1,8 +1,8 @@
-package luxuriousmisfortunes.client.render.armor;
+package luxuriousmisfortunes.unfinished;
 
 import luxuriousmisfortunes.api.Main;
 import luxuriousmisfortunes.common.capabilities.CapabilitySubarmorEquipped;
-import luxuriousmisfortunes.common.items.ItemVelvetSubarmor;
+import luxuriousmisfortunes.common.items.ItemNacreSubarmor;
 import luxuriousmisfortunes.util.ISubarmorEquipped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.AbstractClientPlayer;
@@ -17,8 +17,8 @@ public class LayerSubarmor implements LayerRenderer<AbstractClientPlayer> {
 
     private final RenderPlayer renderPlayer;
 
-    private static ResourceLocation subarmor = new ResourceLocation(Main.MODID, "textures/models/armor/" + ItemVelvetSubarmor.name + ".png");
-    private static ResourceLocation subarmor_switched = new ResourceLocation(Main.MODID, "textures/models/armor/" + ItemVelvetSubarmor.name + "_" + "switched" + ".png");
+    private static ResourceLocation subarmor = new ResourceLocation(Main.MODID, "textures/models/armor/" + ItemNacreSubarmor.name + ".png");
+    private static ResourceLocation subarmor_switched = new ResourceLocation(Main.MODID, "textures/models/armor/" + ItemNacreSubarmor.name + "_" + "switched" + ".png");
 
     final ModelBiped modelBody = new ModelBiped(1.0F);
     final ModelBiped modelLegs = new ModelBiped(0.5F);

@@ -2,11 +2,5 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "luxuriousmisfortunes:items/experiment"
-  },
-  "overrides": [
-    {
-      "predicate": { "luxuriousmisfortunes:changed": 1 },
-      "model": "luxuriousmisfortunes:item/experiment_changed"
-    }
-  ]
+  }
 }

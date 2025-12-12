@@ -1,10 +1,15 @@
 package luxuriousmisfortunes.common.items;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import luxuriousmisfortunes.api.Main;
 import luxuriousmisfortunes.common.basic.ItemFoodBase;
 import luxuriousmisfortunes.common.capabilities.CapabilityChewingGum;
 import luxuriousmisfortunes.util.IChewingGum;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -19,6 +24,8 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemPyriteGum extends ItemFoodBase {
 
@@ -30,7 +37,6 @@ public class ItemPyriteGum extends ItemFoodBase {
         super(name, amount, isWolfFood);
         this.setMaxStackSize(1);
 
-        this.setMaxDamage(10);
         this.setAlwaysEdible();
     }
 
@@ -43,11 +49,9 @@ public class ItemPyriteGum extends ItemFoodBase {
             IChewingGum cap = playerIn.getCapability(CapabilityChewingGum.CAP, null);
 
             if (!cap.isChewing()) {
-                if (stack.getItemDamage() == 0) {
-                    if (playerIn.canEat(true)) {
-                        playerIn.setActiveHand(handIn);
-                        return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
-                    }
+                if (playerIn.canEat(true)) {
+                    playerIn.setActiveHand(handIn);
+                    return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
                 }
             }
         }
@@ -65,11 +69,19 @@ public class ItemPyriteGum extends ItemFoodBase {
             if (player.hasCapability(CapabilityChewingGum.CAP, null)) {
                 IChewingGum cap = player.getCapability(CapabilityChewingGum.CAP, null);
                 cap.setChewing(true);
-                cap.setTimeInitial(worldIn.getTotalWorldTime());
             }
         }
 
         return stack;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn)
+    {
+        super.addInformation(stack, worldIn, tooltip, flagIn);
+
+        tooltip.add(this.description.getFormattedText());
     }
 
     @Override

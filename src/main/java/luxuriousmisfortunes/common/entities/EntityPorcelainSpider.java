@@ -1,10 +1,15 @@
 package luxuriousmisfortunes.common.entities;
 
+import javax.annotation.Nullable;
+
+import luxuriousmisfortunes.init.ItemInit;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityCaveSpider;
 import net.minecraft.init.MobEffects;
+import net.minecraft.item.Item;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 
@@ -17,10 +22,19 @@ public class EntityPorcelainSpider extends EntityCaveSpider {
         // TODO Auto-generated constructor stub
     }
 
-    //    @Override
-    //    protected void setSize(float width, float height) {
-    //        super.setSize(0.5F, 0.5F);
-    //    }
+    @Override
+    @Nullable
+    protected ResourceLocation getLootTable()
+    {
+        return null;
+    }
+
+    @Override
+    @Nullable
+    protected Item getDropItem()
+    {
+        return ItemInit.MATERIAL_PORCELAIN;
+    }
 
     @Override
     public boolean attackEntityAsMob(Entity entityIn)

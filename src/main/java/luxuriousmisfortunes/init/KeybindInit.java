@@ -9,16 +9,16 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 public class KeybindInit {
 
-    public static String name = "key" + "." + Main.MODID + "." + "put_subarmor_on";
-    static String description = "category" + "." + Main.MODID;
+    public static String name_subarmor = "key" + "." + Main.MODID + "." + "put_subarmor_on";
+    static String category = "category" + "." + Main.MODID;
 
     public static KeyBinding PUT_SUBARMOR_ON;
 
     public static void init() {
         PUT_SUBARMOR_ON = new KeyBinding(
-                name,
+                name_subarmor,
                 Keyboard.KEY_M,
-                description
+                category
                 );
 
         ClientRegistry.registerKeyBinding(PUT_SUBARMOR_ON);

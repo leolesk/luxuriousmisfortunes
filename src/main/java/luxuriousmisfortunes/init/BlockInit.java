@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import luxuriousmisfortunes.common.basic.BlockTotemStructure;
-import luxuriousmisfortunes.common.blocks.BlockPuplyStem;
 import luxuriousmisfortunes.common.blocks.BlockTotemBrace;
+import luxuriousmisfortunes.common.blocks.BlockTotemBrazier;
+import luxuriousmisfortunes.common.blocks.BlockStructureFiller;
 import luxuriousmisfortunes.common.blocks.BlockTotemMouth;
 import luxuriousmisfortunes.common.blocks.BlockTotemPersona;
 import luxuriousmisfortunes.common.blocks.BlockTotemPersonaVariant;
@@ -33,11 +34,8 @@ public class BlockInit {
     public static final Block TOTEM_TOOTH = new BlockTotemTooth(BlockTotemTooth.name);
     public static final Block TOTEM_TOOTH_HOLDING = new BlockTotemToothVariant(BlockTotemToothVariant.name);
 
-    public static final Block PUPLY_STEM = new BlockPuplyStem(BlockPuplyStem.name);
-
-
-
-    //    public static final Block FOOLS_PUMPKIN = new BlockBase("fools_pumpkin");
+    public static final Block TOTEM_BRAZIER = new BlockTotemBrazier(BlockTotemBrazier.name);
+    public static final Block TOTEM_BRAZIER_FILLER = new BlockStructureFiller(BlockStructureFiller.name);
 
 
 }

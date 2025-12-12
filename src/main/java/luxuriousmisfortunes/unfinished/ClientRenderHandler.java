@@ -1,6 +1,5 @@
-package luxuriousmisfortunes.handlers;
+package luxuriousmisfortunes.unfinished;
 
-import luxuriousmisfortunes.client.render.armor.LayerSubarmor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderPlayer;
 import net.minecraftforge.client.event.RenderPlayerEvent;
@@ -16,9 +15,9 @@ public class ClientRenderHandler {
     @SubscribeEvent
     public static void onRenderPlayer(RenderPlayerEvent.Pre event) {
 
-        for (RenderPlayer renderer : Minecraft.getMinecraft().getRenderManager().getSkinMap().values()) {
-            renderer.addLayer(new LayerSubarmor(renderer));
-        }
+        //        for (RenderPlayer renderer : Minecraft.getMinecraft().getRenderManager().getSkinMap().values()) {
+        //            renderer.addLayer(new LayerSubarmor(renderer));
+        //        }
     }
 
 }

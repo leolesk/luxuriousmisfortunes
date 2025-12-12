@@ -1,5 +1,8 @@
 package luxuriousmisfortunes.common.entities;
 
+import javax.annotation.Nullable;
+
+import luxuriousmisfortunes.init.ItemInit;
 import net.minecraft.entity.ai.EntityAIFollowParent;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMate;
@@ -12,8 +15,10 @@ import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class EntityVelvetCow extends EntityCow{
@@ -23,6 +28,20 @@ public class EntityVelvetCow extends EntityCow{
     public EntityVelvetCow(World worldIn) {
         super(worldIn);
         // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    @Nullable
+    protected ResourceLocation getLootTable()
+    {
+        return null;
+    }
+
+    @Override
+    @Nullable
+    protected Item getDropItem()
+    {
+        return ItemInit.MATERIAL_VELVET;
     }
 
     @Override

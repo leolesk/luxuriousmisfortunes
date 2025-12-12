@@ -6,12 +6,14 @@ import luxuriousmisfortunes.client.render.entity.RenderPorcelainSpider;
 import luxuriousmisfortunes.client.render.entity.RenderVelvetCow;
 import luxuriousmisfortunes.client.render.entity.RenderVelvetSlime;
 import luxuriousmisfortunes.common.capabilities.CapabilityChewingGum;
+import luxuriousmisfortunes.common.capabilities.CapabilityPayTime;
 import luxuriousmisfortunes.common.capabilities.CapabilitySubarmorEquipped;
 import luxuriousmisfortunes.common.entities.EntityGolemPyrite;
 import luxuriousmisfortunes.common.entities.EntityNacreGhast;
 import luxuriousmisfortunes.common.entities.EntityPorcelainSpider;
 import luxuriousmisfortunes.common.entities.EntityVelvetCow;
 import luxuriousmisfortunes.common.entities.EntityVelvetSlime;
+import luxuriousmisfortunes.common.worldgen.UndergroundForestGen;
 import luxuriousmisfortunes.handlers.RegistryHandler;
 import luxuriousmisfortunes.init.ItemInit;
 import luxuriousmisfortunes.init.KeybindInit;
@@ -26,6 +28,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -51,6 +54,7 @@ public class Main {
         Network.registerPackets();
         CapabilityChewingGum.register();
         CapabilitySubarmorEquipped.register();
+        CapabilityPayTime.register();
 
         RenderingRegistry.registerEntityRenderingHandler(
                 EntityGolemPyrite.class,
@@ -76,8 +80,13 @@ public class Main {
 
     @SideOnly(Side.CLIENT)
     @EventHandler
-    public void Init(FMLInitializationEvent event) {
+    public void ClientInit(FMLInitializationEvent event) {
         KeybindInit.init();
+    }
+
+    @EventHandler
+    public void Init(FMLInitializationEvent event) {
+        GameRegistry.registerWorldGenerator(new UndergroundForestGen(), 3);
     }
 
 

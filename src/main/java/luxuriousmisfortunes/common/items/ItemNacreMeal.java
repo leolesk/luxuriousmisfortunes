@@ -10,13 +10,14 @@ import javax.annotation.Nullable;
 import luxuriousmisfortunes.api.Main;
 import luxuriousmisfortunes.common.basic.ItemBase;
 import luxuriousmisfortunes.init.BlockInit;
-import luxuriousmisfortunes.util.MutationEntry;
+import luxuriousmisfortunes.unfinished.MutationEntry;
 import net.minecraft.block.Block;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
@@ -29,15 +30,15 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemPorcelainMeal extends ItemBase {
+public class ItemNacreMeal extends ItemBase {
 
-    public static String name = "porcelain_meal";
+    public static String name = "nacre_agent";
 
     TextComponentTranslation description = new TextComponentTranslation("tooltip" + "." + Main.MODID + "." + name + "." + "description");
 
     public static final Map<BlockPos, MutationEntry> MUTATION_MAP = new HashMap<>();
 
-    public ItemPorcelainMeal(String name) {
+    public ItemNacreMeal(String name) {
         super(name);
     }
 
@@ -63,7 +64,7 @@ public class ItemPorcelainMeal extends ItemBase {
 
                 if (i.equals(Blocks.NETHER_WART)) {
                     item = Items.NETHER_WART;
-                    this.increaseMutationAt(worldIn, pos, worldIn.getTotalWorldTime());
+                    //                    this.increaseMutationAt(worldIn, pos, worldIn.getTotalWorldTime());
                 } else {
                     item = Item.getItemFromBlock(i);
                 }
@@ -102,27 +103,27 @@ public class ItemPorcelainMeal extends ItemBase {
         return EnumActionResult.PASS;
     }
 
-    public void increaseMutationAt(World world, BlockPos pos, long worldTime) {
-
-        int usedTimes = 0;
-
-        if (MUTATION_MAP.containsKey(pos)) {
-            MutationEntry entry = MUTATION_MAP.get(pos);
-            usedTimes = entry.getUsedTimes();
-
-            if (usedTimes == 10 && world.getTotalWorldTime() - entry.getLastUse() <= 40) {
-                world.setBlockState(pos, BlockInit.PUPLY_STEM.getDefaultState());
-                MUTATION_MAP.remove(pos);
-            } else if (world.getTotalWorldTime() - entry.getLastUse() <= 40) {
-                MutationEntry update = new MutationEntry(worldTime, usedTimes + 1);
-                MUTATION_MAP.put(pos, update);
-            }
-        } else {
-            MutationEntry update = new MutationEntry(worldTime, 1);
-            MUTATION_MAP.put(pos, update);
-        }
-
-    }
+    //    public void increaseMutationAt(World world, BlockPos pos, long worldTime) {
+    //
+    //        int usedTimes = 0;
+    //
+    //        if (MUTATION_MAP.containsKey(pos)) {
+    //            MutationEntry entry = MUTATION_MAP.get(pos);
+    //            usedTimes = entry.getUsedTimes();
+    //
+    //            if (usedTimes == 10 && world.getTotalWorldTime() - entry.getLastUse() <= 40) {
+    //                world.setBlockState(pos, BlockInit.PUPLY_STEM.getDefaultState());
+    //                MUTATION_MAP.remove(pos);
+    //            } else if (world.getTotalWorldTime() - entry.getLastUse() <= 40) {
+    //                MutationEntry update = new MutationEntry(worldTime, usedTimes + 1);
+    //                MUTATION_MAP.put(pos, update);
+    //            }
+    //        } else {
+    //            MutationEntry update = new MutationEntry(worldTime, 1);
+    //            MUTATION_MAP.put(pos, update);
+    //        }
+    //
+    //    }
 
     @Override
     @SideOnly(Side.CLIENT)
@@ -131,6 +132,12 @@ public class ItemPorcelainMeal extends ItemBase {
         super.addInformation(stack, worldIn, tooltip, flagIn);
 
         tooltip.add(this.description.getFormattedText());
+    }
+
+    @Override
+    public EnumRarity getRarity(ItemStack stack)
+    {
+        return EnumRarity.RARE;
     }
 
 }

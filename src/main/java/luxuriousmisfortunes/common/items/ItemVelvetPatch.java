@@ -1,37 +1,27 @@
 package luxuriousmisfortunes.common.items;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 
 import javax.annotation.Nullable;
 
 import luxuriousmisfortunes.api.Main;
-import luxuriousmisfortunes.init.ItemInit;
+import luxuriousmisfortunes.common.basic.ItemBase;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.init.Items;
 import net.minecraft.item.EnumRarity;
-import net.minecraft.item.ItemFishingRod;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import scala.util.Random;
 
-public class ItemPyriteFishingRod extends ItemFishingRod {
+public class ItemVelvetPatch extends ItemBase {
 
-    public static String name = "pyrite_fishing_rod";
+    public static String name = "velvet_patch";
 
     TextComponentTranslation description = new TextComponentTranslation("tooltip" + "." + Main.MODID + "." + name + "." + "description");
 
-    public ItemPyriteFishingRod(String name) {
-        this.setRegistryName(name);
-        this.setTranslationKey(Main.MODID + "." + name);
-        this.setCreativeTab(Main.tabMod);
-
-        ItemInit.ITEMS.add(this);
+    public ItemVelvetPatch(String name) {
+        super(name);
     }
 
     @Override

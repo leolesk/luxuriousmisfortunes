@@ -16,7 +16,6 @@ public class LostItemsHashHelper {
     public static HashMap<UUID, ArrayList<EntityItem>> global_record = new HashMap<UUID, ArrayList<EntityItem>>();
     static int limit = 50;
 
-
     public static void tryAddItemToMap(EntityItem entityItem, UUID playerId) {
 
         if (global_record.containsKey(playerId)) {

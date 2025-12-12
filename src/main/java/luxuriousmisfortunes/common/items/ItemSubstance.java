@@ -11,6 +11,7 @@ import javax.annotation.Nullable;
 import luxuriousmisfortunes.api.Main;
 import luxuriousmisfortunes.common.basic.ItemBase;
 import luxuriousmisfortunes.common.entities.EntityVelvetSlime;
+import luxuriousmisfortunes.util.PayTimeHash;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntitySlime;
@@ -37,8 +38,6 @@ public class ItemSubstance extends ItemBase {
 
     public static String times_used = "times_used";
     public static String is_active = "is_active";
-
-    public static HashMap<UUID, LocalTime> timers = new HashMap<UUID, LocalTime>();
 
     Class<? extends EntityLivingBase> entityFromTransform;
     Class<? extends EntityLivingBase> entityToTransform;
@@ -136,8 +135,8 @@ public class ItemSubstance extends ItemBase {
             EntityPlayer player = FMLClientHandler.instance().getClientPlayerEntity();
             UUID id = player.getUniqueID();
 
-            if (id != null && timers.containsKey(id)) {
-                LocalTime timer = timers.get(id);
+            if (id != null && PayTimeHash.payment_record.containsKey(id)) {
+                LocalTime timer = PayTimeHash.payment_record.get(id);
 
                 tooltip.add("Time left: " + timer.toString());
             }
@@ -154,7 +153,7 @@ public class ItemSubstance extends ItemBase {
 
             nbt.setBoolean(is_active, true);
 
-            timers.put(playerIn.getUniqueID(), LocalTime.of(5, 0, 0));
+            PayTimeHash.payment_record.put(playerIn.getUniqueID(), LocalTime.of(2, 0, 0));
 
             return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
         }

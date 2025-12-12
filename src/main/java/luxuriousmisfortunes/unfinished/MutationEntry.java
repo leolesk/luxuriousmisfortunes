@@ -1,4 +1,4 @@
-package luxuriousmisfortunes.util;
+package luxuriousmisfortunes.unfinished;
 
 public class MutationEntry {
     long lastUse;

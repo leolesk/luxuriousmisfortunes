@@ -2,11 +2,16 @@ package luxuriousmisfortunes.common.entities;
 
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
+import luxuriousmisfortunes.init.ItemInit;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.EntityAIFindEntityNearestPlayer;
 import net.minecraft.entity.ai.EntityMoveHelper;
 import net.minecraft.entity.monster.EntityGhast;
+import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
@@ -17,6 +22,20 @@ public class EntityNacreGhast extends EntityGhast{
     public EntityNacreGhast(World worldIn) {
         super(worldIn);
         // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    @Nullable
+    protected ResourceLocation getLootTable()
+    {
+        return null;
+    }
+
+    @Override
+    @Nullable
+    protected Item getDropItem()
+    {
+        return ItemInit.MATERIAL_NACRE;
     }
 
     @Override

@@ -1,11 +1,14 @@
 package luxuriousmisfortunes.common.entities;
 
+import javax.annotation.Nullable;
+
 import luxuriousmisfortunes.init.ItemInit;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class EntityVelvetSlime extends EntitySlime{
@@ -15,7 +18,13 @@ public class EntityVelvetSlime extends EntitySlime{
 
     public EntityVelvetSlime(World worldIn) {
         super(worldIn);
-        // TODO Auto-generated constructor stub
+    }
+
+    @Override
+    @Nullable
+    protected ResourceLocation getLootTable()
+    {
+        return null;
     }
 
     @Override

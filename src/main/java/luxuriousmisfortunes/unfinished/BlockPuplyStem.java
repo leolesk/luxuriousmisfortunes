@@ -1,4 +1,4 @@
-package luxuriousmisfortunes.common.blocks;
+package luxuriousmisfortunes.unfinished;
 
 import java.util.List;
 import java.util.Random;
@@ -41,15 +41,15 @@ public class BlockPuplyStem extends BlockBase {
         this.setDefaultState(this.blockState.getBaseState().withProperty(GROWTH, 0));
     }
 
-    @Override
-    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-
-        if (state.getValue(GROWTH) == 6) {
-            drops.add(new ItemStack(ItemInit.PSEUDO_MEAT, 6));
-        } else {
-            drops.clear();
-        }
-    }
+    //    @Override
+    //    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+    //
+    //        if (state.getValue(GROWTH) == 6) {
+    //            drops.add(new ItemStack(ItemInit.PSEUDO_MEAT, 6));
+    //        } else {
+    //            drops.clear();
+    //        }
+    //    }
 
     @Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random rand) {

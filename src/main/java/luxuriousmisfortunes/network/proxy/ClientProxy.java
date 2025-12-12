@@ -18,7 +18,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void registerItemVariants(Item item, int meta, String... names) {
 
-        for (int i = 0; i < meta; i++) {
+        for (int i = 0; i <= meta; i++) {
             ModelBakery.registerItemVariants(item, new ResourceLocation(Main.MODID, names[i]));
         }
 
@@ -28,6 +28,12 @@ public class ClientProxy extends CommonProxy {
     public void registerItemRenderer(Item item, int meta, String id) {
 
         ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
+    }
+
+    @Override
+    public void registerMetaRenderer(Item item, String name, int meta, String id) {
+
+        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(name, id));
     }
 
 }

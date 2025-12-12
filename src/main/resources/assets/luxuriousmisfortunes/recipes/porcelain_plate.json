@@ -1,0 +1,30 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "luxuriousmisfortunes:porcleain_plate",
+    "pattern": [
+        "CDC",
+        "# #",
+        "CQC"
+    ],
+    "key": {
+        "C": {
+            "item": "luxuriousmisfortunes:porcelain_chitin",
+            "data": 0
+        },
+        "D": {
+            "item": "minecraft:diamond",
+            "data": 0
+        },
+        "#": {
+            "item": "minecraft:dye",
+            "data": 5
+        },
+        "Q": {
+             "item": "minecraft:quartz",
+              "data": 0
+              }
+    },
+    "result": {
+        "item": "luxuriousmisfortunes:porcelain_plate"
+    }
+}

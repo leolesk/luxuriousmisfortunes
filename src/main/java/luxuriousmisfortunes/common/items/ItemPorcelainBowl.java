@@ -12,11 +12,13 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
@@ -77,7 +79,7 @@ public class ItemPorcelainBowl extends ItemFoodBase {
             for (int x = 0; x < 3; x++) {
                 for (int y = 0; y < 3; y ++) {
                     if (compound.getString(String.valueOf(x)).equals(types[y].getRegistryName().toString())) {
-                        tooltip.add(types[x].getItemStackDisplayName(new ItemStack(types[y])));
+                        tooltip.add(types[y].getItemStackDisplayName(new ItemStack(types[y])));
                     }
                 }
             }
@@ -90,10 +92,7 @@ public class ItemPorcelainBowl extends ItemFoodBase {
 
         ItemStack stack = playerIn.getHeldItem(handIn);
 
-        System.out.println(stack.getTagCompound());
-
         if (stack.getSubCompound(Main.MODID) != null) {
-            System.out.println("found modid");
 
             NBTTagCompound compound = stack.getSubCompound(Main.MODID);
 
@@ -133,7 +132,7 @@ public class ItemPorcelainBowl extends ItemFoodBase {
         if (stack.getSubCompound(Main.MODID) != null) {
 
             NBTTagCompound compound = stack.getSubCompound(Main.MODID);
-            boolean flag1 = false;
+            int flag1 = 0;
             boolean flag2 = false;
 
             outerLoop:
@@ -142,23 +141,30 @@ public class ItemPorcelainBowl extends ItemFoodBase {
                         if (compound.getString(String.valueOf(x)).equals(types[y].getRegistryName().toString())) {
                             compound.removeTag(String.valueOf(x));
                             flag2 = (y == 2);
-                            flag1 = true;
                             break outerLoop;
                         }
                     }
+                    flag1 += 1;
                 }
-            System.out.println(compound);
 
-            int ticksToApply = flag2 ? 6000 : 1200;
+            Potion toApply = flag2 ? MobEffects.INSTANT_HEALTH : MobEffects.RESISTANCE;
+            int ticksToApply = flag2 ? 400 : 1200;
+            int levelToApply = flag2 ? 0 : 1;
 
-            entityLiving.addPotionEffect(new PotionEffect(EffectInit.REPLENISHED, ticksToApply, 1));
-
-            if (!flag1) {
-                empty.getOrCreateSubCompound(Main.MODID).setDouble(key, 0d);
+            if (flag2) {
+                entityLiving.addPotionEffect(new PotionEffect(MobEffects.INSTANT_HEALTH, 400, 0));
             } else {
-                NBTTagCompound sub = empty.getOrCreateSubCompound(Main.MODID);
-                sub.merge(compound.copy());
-                empty.setTagCompound(sub);
+                entityLiving.addPotionEffect(new PotionEffect(EffectInit.REPLENISHED, 400, 0));
+                entityLiving.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, 2400, 0));
+            }
+
+            if (flag1 == 1) {
+                empty.removeSubCompound(Main.MODID);
+            } else {
+                NBTTagCompound newRoot = new NBTTagCompound();
+                NBTTagCompound sub = compound.copy();
+                newRoot.setTag(Main.MODID, sub);
+                empty.setTagCompound(newRoot);
             }
 
         }

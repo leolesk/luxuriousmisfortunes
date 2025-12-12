@@ -5,19 +5,19 @@ import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 
-public class CapabilityChewingGumProvider implements ICapabilitySerializable<NBTTagCompound>{
+public class CapabilityPayTimeProvider implements ICapabilitySerializable<NBTTagCompound> {
 
-    private final ChewingGum instance = new ChewingGum();
+    private final PayTime instance = new PayTime();
 
     @Override
     public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
-        return capability == CapabilityChewingGum.CAP;
+        return capability == CapabilityPayTime.CAP;
     }
 
     @Override
     @SuppressWarnings("unchecked")
     public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
-        return (capability == CapabilityChewingGum.CAP) ? (T) this.instance : null;
+        return (capability == CapabilityPayTime.CAP) ? (T) this.instance : null;
     }
 
     @Override

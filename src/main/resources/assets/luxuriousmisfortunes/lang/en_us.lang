@@ -11,22 +11,18 @@ tile.luxuriousmisfortunes.totem_tooth_holding.name=Totem Tooth
 tile.luxuriousmisfortunes.totem_pole.name=Totem Pole
 tile.luxuriousmisfortunes.totem_stone.name=Totem Stone
 
-tile.luxuriousmisfortunes.emerald_ore_depleted.name=Depleted Emerald Ore
-tile.luxuriousmisfortunes.iron_ore_depleted.name=Depleted Iron Ore
-tile.luxuriousmisfortunes.gold_ore_depleted.name=Depleted Gold Ore
-tile.luxuriousmisfortunes.coal_ore_depleted.name=Depleted Coal Ore
-tile.luxuriousmisfortunes.diamond_ore_depleted.name=Depleted Diamond Ore
-
 # ITEMS
 
 item.luxuriousmisfortunes.experiment.name=Experiment 114
+item.luxuriousmisfortunes.velvet_patch.name=Velvet Patch
 
 item.luxuriousmisfortunes.porcelain_jug.name=Porcelain Jug
 item.luxuriousmisfortunes.porcelain_bowl.name=Porcelain Bowl
 item.luxuriousmisfortunes.porcelain_plate.name=Porcelain Plate
-item.luxuriousmisfortunes.porcelain_scalpel.name=Porcelain Scalpel
-item.luxuriousmisfortunes.porcelain_meal.name=Shredded Chitin
-item.luxuriousmisfortunes.porcelain_tissue.name=Marbled Patty
+
+item.luxuriousmisfortunes.nacre_scalpel.name=Nacre Scalpel
+item.luxuriousmisfortunes.nacre_agent.name=Fluff
+item.luxuriousmisfortunes.nacre_crown.name=Nacre Crown
 
 item.luxuriousmisfortunes.nacre_feather.name=Nacre Feather
 item.luxuriousmisfortunes.porcelain_chitin.name=Porcelain Chitin
@@ -43,11 +39,21 @@ item.luxuriousmisfortunes.nacre.name=Nacre Larvae
 item.luxuriousmisfortunes.velvet.name=Velvet Spores
 item.luxuriousmisfortunes.pyrite.name=Pyrite Hearth
 
-
 # GUI
 itemGroup.tabLuxuriousMisfortunes=Luxurious Misfortunes
 category.luxuriousmisfortunes=Luxurious Misfortunes
-key.luxuriousmisfortunes.put_subarmor_on=Put Subarmor on
+key.luxuriousmisfortunes.put_subarmor_on=Put Subarmor On
+
+# POTION EFFECTS
+effect.fortunes_grace=Fortune's Grace
+effect.replenished=Replenished
+
+# ENTITIES
+entity.pyrite_golem.name=Pyrite Golem
+entity.nacre_ghast.name=Nacre Ghast
+entity.porcelain_spider.name=Porcelain Spider
+entity.velvet_cow.name=Velvet Cow
+entity.velvet_slime.name=Velvet Slime
 
 # TOOLTIPS
 tooltip.luxuriousmisfortunes.element_unbreakable=§5This block is a part of an unbreakable structure. Only for creative.
@@ -55,12 +61,17 @@ tooltip.luxuriousmisfortunes.element_unbreakable=§5This block is a part of an u
 tooltip.luxuriousmisfortunes.porcelain_plate.description=§5Pick up the cake with [Shift + RMB] while in hand.
 tooltip.luxuriousmisfortunes.porcelain_bowl.description=§5Combine with a soup in the crafting grid to fill.
 tooltip.luxuriousmisfortunes.porcelain_jug.description=§5Combine with a potion in the crating grid to fill.
-tooltip.luxuriousmisfortunes.porcelain_scalpel.description=§5Removes vital body coverings from animals without harming them.
-tooltip.luxuriousmisfortunes.porcelain_meal.description=§5Causes rapid cell division in plants resistant to conventional fertilizers.
-tooltip.luxuriousmisfortunes.porcelain_tissue.description=§5The fungus strangely restructures plant cells, creating muscle-like structures and animal fats.
 
 tooltip.luxuriousmisfortunes.experiment.description=§5A warm and fluffy mass with a slight hint of raw meat.
 tooltip.luxuriousmisfortunes.experiment_conducted.description=§5The mass squeaks and tries to slip out of your hands... but now it smells like Play-Doh.
+tooltip.luxuriousmisfortunes.pyrite_fishing_rod.description=§Saves tools and armor from breakage by growing into metal and precious stones.
+
+tooltip.luxuriousmisfortunes.pyrite_gum.description=§5Allows to remain relentless while finds sugar in the inventory. Consume to activate.
+tooltip.luxuriousmisfortunes.pyrite_fishing_rod.description=§5Retrieves lost, burned and exploded items from deep waters.
+
+tooltip.luxuriousmisfortunes.nacre_scalpel.description=§5Removes vital body coverings from animals without harming them.
+tooltip.luxuriousmisfortunes.nacre_agent.description=§5Causes rapid cell division in plants resistant to conventional fertilizers.
+tooltip.luxuriousmisfortunes.nacre_crown.description=§5Gives the wearer more protection the more experienced he is.
 
 # FIRST ENCOUNTER LINES
 scene.luxuriousmisfortunes.totem_persona.line_0=§oAh, who do I see! An uninvited guest. But an expected one...
@@ -81,3 +92,6 @@ interaction.luxuriousmisfortunes.totem_tooth.pyrite=§oThe object is warm and so
 interaction.luxuriousmisfortunes.totem_tooth.velvet=§oThe object is soft and pleasant to the touch. It's made of something precious.
 interaction.luxuriousmisfortunes.totem_tooth.nacre=§oThe object emits a faint glow and has a perfectly cubic shape.
 interaction.luxuriousmisfortunes.totem_tooth.porcelain=§oThe object is cold and hard. It should be something fragile...
+
+# COMPLAINTS
+complaint.luxuriousmisfortunes.gluttony=§oDisgusting, beggar's food! I need something more refined!

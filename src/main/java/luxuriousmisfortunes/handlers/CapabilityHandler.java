@@ -1,5 +1,9 @@
 package luxuriousmisfortunes.handlers;
 
+import luxuriousmisfortunes.common.capabilities.CapabilityChewingGum;
+import luxuriousmisfortunes.common.capabilities.CapabilityChewingGumProvider;
+import luxuriousmisfortunes.common.capabilities.CapabilityPayTime;
+import luxuriousmisfortunes.common.capabilities.CapabilityPayTimeProvider;
 import luxuriousmisfortunes.common.capabilities.CapabilitySubarmorEquipped;
 import luxuriousmisfortunes.common.capabilities.CapabilitySubarmorEquippedProvider;
 import net.minecraft.entity.Entity;
@@ -17,6 +21,8 @@ public class CapabilityHandler {
         if (event.getObject() instanceof EntityPlayer) {
 
             event.addCapability(CapabilitySubarmorEquipped.KEY, new CapabilitySubarmorEquippedProvider());
+            event.addCapability(CapabilityChewingGum.KEY, new CapabilityChewingGumProvider());
+            event.addCapability(CapabilityPayTime.KEY, new CapabilityPayTimeProvider());
         }
     }
 

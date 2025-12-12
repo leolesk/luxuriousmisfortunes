@@ -23,13 +23,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemPorcelainScalpel extends ItemBase {
+public class ItemNacreScalpel extends ItemBase {
 
-    public static String name = "porcelain_scalpel";
+    public static String name = "nacre_scalpel";
 
     TextComponentTranslation description = new TextComponentTranslation("tooltip" + "." + Main.MODID + "." + name + "." + "description");
 
-    public ItemPorcelainScalpel(String name) {
+    public ItemNacreScalpel(String name) {
         super(name);
 
         this.setMaxDamage(100);

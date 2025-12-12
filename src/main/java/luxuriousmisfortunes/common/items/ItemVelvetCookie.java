@@ -9,11 +9,10 @@ import luxuriousmisfortunes.common.basic.ItemFoodBase;
 import luxuriousmisfortunes.init.EffectInit;
 import luxuriousmisfortunes.util.IHasMeta;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.Entity;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
@@ -22,6 +21,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
@@ -31,7 +31,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ItemVelvetCookie extends ItemFoodBase implements IHasMeta{
 
     TextComponentTranslation description = new TextComponentTranslation("tooltip" + "." + Main.MODID + "." + name + "." + "description");
-    TextComponentTranslation description_changed = new TextComponentTranslation("tooltip" + "." + Main.MODID + "." + meta_name + "." + "description");
+    TextComponentTranslation description_conducted = new TextComponentTranslation("tooltip" + "." + Main.MODID + "." + meta_name + "." + "description");
 
     public static String name = "experiment";
     public static String meta_name = "experiment_conducted";
@@ -56,7 +56,7 @@ public class ItemVelvetCookie extends ItemFoodBase implements IHasMeta{
     @Override
     public void registerModels() {
         Main.proxy.registerItemRenderer(this, 0, "inventory");
-        Main.proxy.registerItemRenderer(this, 1, "inventory");
+        Main.proxy.registerMetaRenderer(this, ":meta_name", 1, "inventory");
     }
 
     @Override
@@ -98,12 +98,21 @@ public class ItemVelvetCookie extends ItemFoodBase implements IHasMeta{
                         );
 
                 playerIn.dropItem(stack, false);
+                return new ActionResult<ItemStack>(EnumActionResult.FAIL, new ItemStack(Items.AIR));
 
             }
 
         }
 
         return new ActionResult<ItemStack>(EnumActionResult.FAIL, stack);
+    }
+
+    @Override
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
+        if (this.isInCreativeTab(tab)) {
+            items.add(new ItemStack(this, 1, 0));
+            items.add(new ItemStack(this, 1, 1));
+        }
     }
 
     @Override
@@ -149,7 +158,7 @@ public class ItemVelvetCookie extends ItemFoodBase implements IHasMeta{
 
         if (stack.getMetadata() == 1) {
 
-            tooltip.add(this.description_changed.getFormattedText());
+            tooltip.add(this.description_conducted.getFormattedText());
 
         } else {
             tooltip.add(this.description.getFormattedText());

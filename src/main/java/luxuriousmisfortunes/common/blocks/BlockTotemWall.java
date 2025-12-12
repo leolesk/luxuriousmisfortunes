@@ -9,8 +9,10 @@ import luxuriousmisfortunes.common.basic.BlockTotemStructure;
 import luxuriousmisfortunes.init.BlockInit;
 import net.minecraft.block.BlockWall;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -27,6 +29,12 @@ public class BlockTotemWall extends BlockWall{
         this.setHardness(this.blockHardness);
 
         BlockInit.BLOCKS.add(this);
+    }
+
+    @Override
+    public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items)
+    {
+        items.add(new ItemStack(this, 1, 0));
     }
 
     @Override

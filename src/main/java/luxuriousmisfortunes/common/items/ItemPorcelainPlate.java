@@ -84,7 +84,6 @@ public class ItemPorcelainPlate extends ItemFoodBase {
                 }
             }
         }
-
         return EnumActionResult.PASS;
     }
 
@@ -103,10 +102,7 @@ public class ItemPorcelainPlate extends ItemFoodBase {
                     playerIn.setActiveHand(handIn);
                     return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
                 }
-
-
             }
-
         }
 
         return new ActionResult<ItemStack>(EnumActionResult.FAIL, stack);

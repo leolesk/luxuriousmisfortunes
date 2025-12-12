@@ -4,6 +4,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.base.Predicate;
 
+import luxuriousmisfortunes.init.ItemInit;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -23,8 +24,11 @@ import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraft.world.storage.loot.LootTableList;
 
 public class EntityGolemPyrite extends EntityIronGolem{
 
@@ -33,6 +37,20 @@ public class EntityGolemPyrite extends EntityIronGolem{
 
     public EntityGolemPyrite(World worldIn) {
         super(worldIn);
+    }
+
+    @Override
+    @Nullable
+    protected ResourceLocation getLootTable()
+    {
+        return null;
+    }
+
+    @Override
+    @Nullable
+    protected Item getDropItem()
+    {
+        return ItemInit.MATERIAL_PYRITE;
     }
 
     @Override
