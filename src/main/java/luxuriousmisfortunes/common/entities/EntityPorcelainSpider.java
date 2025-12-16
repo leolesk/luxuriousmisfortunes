@@ -37,6 +37,27 @@ public class EntityPorcelainSpider extends EntityCaveSpider {
     }
 
     @Override
+    protected void dropFewItems(boolean wasRecentlyHit, int lootingModifier)
+    {
+        Item item = this.getDropItem();
+
+        if (item != null)
+        {
+            int i = 1 + this.rand.nextInt(3);
+
+            if (lootingModifier > 0)
+            {
+                i += this.rand.nextInt(lootingModifier + 1);
+            }
+
+            for (int j = 0; j < i; ++j)
+            {
+                this.dropItem(item, 1);
+            }
+        }
+    }
+
+    @Override
     public boolean attackEntityAsMob(Entity entityIn)
     {
         if (super.attackEntityAsMob(entityIn))

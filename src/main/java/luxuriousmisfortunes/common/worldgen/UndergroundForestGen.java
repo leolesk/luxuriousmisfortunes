@@ -19,7 +19,7 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class UndergroundForestGen implements IWorldGenerator {
 
-    public static String name = "undeground_forest";
+    public static String name = "underground_forest";
 
     @Override
     public void generate(Random rand, int chunkX, int chunkZ, World world,
@@ -33,7 +33,7 @@ public class UndergroundForestGen implements IWorldGenerator {
     private void generateOverworld(Random rand, int chunkX, int chunkZ, World world) {
 
 
-        if (rand.nextInt(40) != 0)
+        if (rand.nextInt(80) != 0)
             return;
 
         int x = (chunkX * 16) + rand.nextInt(16);
@@ -73,6 +73,7 @@ public class UndergroundForestGen implements IWorldGenerator {
     private boolean canPlaceStructure(World world, BlockPos pos, Template template) {
 
         BlockPos size = template.getSize();
+
         BlockPos min = pos;
         BlockPos max = pos.add(size.getX() - 1, size.getY() - 1, size.getZ() - 1);
 
@@ -81,12 +82,21 @@ public class UndergroundForestGen implements IWorldGenerator {
         for (int x = min.getX() - padding; x <= max.getX() + padding; x++) {
             for (int y = min.getY() - padding; y <= max.getY() + padding; y++) {
                 for (int z = min.getZ() - padding; z <= max.getZ() + padding; z++) {
+
+                    if (x >= min.getX() && x <= max.getX()
+                            && y >= min.getY() && y <= max.getY()
+                            && z >= min.getZ() && z <= max.getZ()) {
+                        continue;
+                    }
+
                     BlockPos checkPos = new BlockPos(x, y, z);
+
                     if (world.isAirBlock(checkPos))
                         return false;
                 }
             }
         }
+
         return true;
     }
 

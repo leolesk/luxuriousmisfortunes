@@ -137,8 +137,7 @@ public class ItemPorcelainJug extends ItemFoodBase {
                 }
             }
 
-            if (flag1 == 1) {
-                //                empty.getOrCreateSubCompound(Main.MODID).setDouble(key, 0d);
+            if (flag1 == 2) {
                 empty.removeSubCompound(Main.MODID);
             } else {
                 NBTTagCompound newRoot = new NBTTagCompound();

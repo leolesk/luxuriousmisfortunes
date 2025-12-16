@@ -1,0 +1,26 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "luxuriousmisfortunes:velvet_patch",
+    "pattern": [
+        " GG",
+        "SLL",
+        "SLL"
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:string",
+            "data": 0
+        },
+        "G": {
+            "item": "minecraft:gold_ingot",
+            "data": 0
+        },
+        "L": {
+             "item": "luxuriousmisfortunes:velvet_leather",
+              "data": 0
+              }
+    },
+    "result": {
+        "item": "luxuriousmisfortunes:velvet_patch"
+    }
+}

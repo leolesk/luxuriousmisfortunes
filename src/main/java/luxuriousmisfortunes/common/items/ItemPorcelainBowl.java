@@ -158,7 +158,7 @@ public class ItemPorcelainBowl extends ItemFoodBase {
                 entityLiving.addPotionEffect(new PotionEffect(MobEffects.HEALTH_BOOST, 2400, 0));
             }
 
-            if (flag1 == 1) {
+            if (flag1 == 2) {
                 empty.removeSubCompound(Main.MODID);
             } else {
                 NBTTagCompound newRoot = new NBTTagCompound();

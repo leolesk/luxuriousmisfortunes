@@ -55,9 +55,16 @@ public class PacketSubarmorEquipped implements IMessage{
 
                 armor.setArmorOn(message.isArmorOn);
 
+                IAttributeInstance armorAttribute = player.getEntityAttribute(SharedMonsterAttributes.ARMOR);
+                UUID uuid = UUID.fromString("01234567-89ab-cdef-0123-456789abcdef");
+
                 if (!message.isArmorOn) {
 
-                    ItemStack armorStack = new ItemStack(ItemInit.SUBARMOR);
+                    ItemStack armorStack = new ItemStack(ItemInit.CROWN);
+
+                    if (armorAttribute.getModifier(uuid) != null) {
+                        armorAttribute.removeModifier(uuid);
+                    }
 
                     if (!player.addItemStackToInventory(armorStack)) {
                         player.dropItem(armorStack, false);
@@ -66,10 +73,6 @@ public class PacketSubarmorEquipped implements IMessage{
                     player.setHeldItem(EnumHand.MAIN_HAND, ItemStack.EMPTY);
 
                     int armorValue = player.experienceLevel / 3;
-
-                    IAttributeInstance armorAttribute = player.getEntityAttribute(SharedMonsterAttributes.ARMOR);
-
-                    UUID uuid = UUID.fromString("01234567-89ab-cdef-0123-456789abcdef");
 
                     if (armorAttribute.getModifier(uuid) != null) {
                         armorAttribute.removeModifier(uuid);

@@ -34,8 +34,10 @@ public class BlockInit {
     public static final Block TOTEM_TOOTH = new BlockTotemTooth(BlockTotemTooth.name);
     public static final Block TOTEM_TOOTH_HOLDING = new BlockTotemToothVariant(BlockTotemToothVariant.name);
 
-    public static final Block TOTEM_BRAZIER = new BlockTotemBrazier(BlockTotemBrazier.name);
-    public static final Block TOTEM_BRAZIER_FILLER = new BlockStructureFiller(BlockStructureFiller.name);
+    public static final Block TOTEM_BRAZIER = new BlockTotemBrazier(BlockTotemBrazier.name)
+            .setHardness(2);
+    public static final Block TOTEM_BRAZIER_FILLER = new BlockStructureFiller(BlockStructureFiller.name)
+            .setHardness(2);
 
 
 }

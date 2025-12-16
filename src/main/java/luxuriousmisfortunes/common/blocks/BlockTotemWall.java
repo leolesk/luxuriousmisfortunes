@@ -24,7 +24,7 @@ public class BlockTotemWall extends BlockWall{
 
         this.setRegistryName(name);
         this.setTranslationKey(Main.MODID + "." + name);
-        this.setCreativeTab(Main.tabMod);
+        this.setCreativeTab(CreativeTabs.SEARCH);
 
         this.setHardness(this.blockHardness);
 

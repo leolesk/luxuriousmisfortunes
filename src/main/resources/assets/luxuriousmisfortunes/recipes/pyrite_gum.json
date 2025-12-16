@@ -12,12 +12,12 @@
             "data": 0
         },
         "A": {
-            "item": "minecraft:golden_apple",
+            "item": "minecraft:gold_ingot",
             "data": 0
         },
         "S": {
             "item": "luxuriousmisfortunes:animated_custard",
-            "data": 5
+            "data": 0
         }
     },
     "result": {

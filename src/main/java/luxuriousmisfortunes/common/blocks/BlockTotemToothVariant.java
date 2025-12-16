@@ -23,6 +23,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
@@ -37,6 +38,28 @@ public class BlockTotemToothVariant extends BlockTotemStructure {
     public static final PropertyInteger HOLDING = PropertyInteger.create("holding", 0, 3);
 
     public static String name = "totem_tooth_holding";
+
+    private static final double T = 2.0 / 3.0;
+    static final AxisAlignedBB BB_NORTH =
+            new AxisAlignedBB(
+                    0.0, 0.0, 1.0 - T,
+                    1.0, 1.0, 1.0
+                    );
+    static final AxisAlignedBB BB_SOUTH =
+            new AxisAlignedBB(
+                    0.0, 0.0, 0.0,
+                    1.0, 1.0, T
+                    );
+    static final AxisAlignedBB BB_WEST =
+            new AxisAlignedBB(
+                    1.0 - T, 0.0, 0.0,
+                    1.0,     1.0, 1.0
+                    );
+    static final AxisAlignedBB BB_EAST =
+            new AxisAlignedBB(
+                    0.0, 0.0, 0.0,
+                    T,   1.0, 1.0
+                    );
 
     public BlockTotemToothVariant(String name) {
         super(name, Material.ROCK);
@@ -76,6 +99,17 @@ public class BlockTotemToothVariant extends BlockTotemStructure {
     public BlockRenderLayer getRenderLayer()
     {
         return BlockRenderLayer.CUTOUT;
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
+        switch (state.getValue(FACING)) {
+            case NORTH: return BB_NORTH;
+            case SOUTH: return BB_SOUTH;
+            case WEST:  return BB_WEST;
+            case EAST:  return BB_EAST;
+            default:    return FULL_BLOCK_AABB;
+        }
     }
 
     @Override

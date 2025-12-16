@@ -56,7 +56,7 @@ public class ItemVelvetCookie extends ItemFoodBase implements IHasMeta{
     @Override
     public void registerModels() {
         Main.proxy.registerItemRenderer(this, 0, "inventory");
-        Main.proxy.registerMetaRenderer(this, ":meta_name", 1, "inventory");
+        Main.proxy.registerMetaRenderer(this, Main.MODID + ":" + meta_name, 1, "inventory");
     }
 
     @Override
@@ -81,7 +81,7 @@ public class ItemVelvetCookie extends ItemFoodBase implements IHasMeta{
                 amplifier = Math.max(1, Math.min(4, playerIn.getActivePotionEffect(EffectInit.FORTUNES_GRACE).getAmplifier()));
             }
 
-            if (playerIn.canEat(false)  && (amplifier * 4) == playerIn.experienceLevel) {
+            if (playerIn.canEat(false)  && (amplifier * 8) <= playerIn.experienceLevel) {
 
                 playerIn.setActiveHand(handIn);
                 return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
@@ -107,13 +107,13 @@ public class ItemVelvetCookie extends ItemFoodBase implements IHasMeta{
         return new ActionResult<ItemStack>(EnumActionResult.FAIL, stack);
     }
 
-    @Override
-    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
-        if (this.isInCreativeTab(tab)) {
-            items.add(new ItemStack(this, 1, 0));
-            items.add(new ItemStack(this, 1, 1));
-        }
-    }
+    //    @Override
+    //    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> items) {
+    //        if (this.isInCreativeTab(tab)) {
+    //            items.add(new ItemStack(this, 1, 0));
+    //            items.add(new ItemStack(this, 1, 1));
+    //        }
+    //    }
 
     @Override
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
@@ -134,15 +134,15 @@ public class ItemVelvetCookie extends ItemFoodBase implements IHasMeta{
             int level = 0;
 
             if (effect != null) {
-
                 int amp = effect.getAmplifier();
-                level = amp < 4 ? amp + 1 : 0;
-
+                level = amp < 4 ? amp + 1 : 4;
             }
 
-            player.addExperienceLevel(level * 4);
+            player.addPotionEffect(new PotionEffect(EffectInit.FORTUNES_GRACE, 1200, level));
 
-            player.addPotionEffect(new PotionEffect(EffectInit.FORTUNES_GRACE, 600, level));
+            level = level == 0 ? 1 : level;
+
+            player.addExperienceLevel(-(level * 8));
 
         }
 

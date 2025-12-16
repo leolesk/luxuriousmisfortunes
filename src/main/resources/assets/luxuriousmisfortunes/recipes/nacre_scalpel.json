@@ -1,0 +1,22 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "luxuriousmisfortunes:nacre_scalpel",
+    "pattern": [
+        " FL",
+        "FLF",
+        "LF "
+    ],
+    "key": {
+        "F": {
+            "item": "luxuriousmisfortunes:nacre_feather",
+            "data": 0
+        },
+        "L": {
+            "item": "minecraft:iron_ingot",
+            "data": 0
+        }
+    },
+    "result": {
+        "item": "luxuriousmisfortunes:nacre_scalpel"
+    }
+}

@@ -59,7 +59,7 @@ public class SubarmorEquippedHandler {
 
             if (armor != null) {
                 if (!armor.isArmorOn()) {
-                    if (player.getHeldItemMainhand().getItem().equals(ItemInit.SUBARMOR)) {
+                    if (player.getHeldItemMainhand().getItem().equals(ItemInit.CROWN)) {
                         armor.setArmorOn(true);
                         Network.sendToPlayerSP(new PacketSubarmorEquipped(true));
                     }

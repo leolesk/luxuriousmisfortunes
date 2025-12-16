@@ -3,7 +3,6 @@ package luxuriousmisfortunes.init;
 import java.util.ArrayList;
 import java.util.List;
 
-import luxuriousmisfortunes.api.Main;
 import luxuriousmisfortunes.common.basic.ItemBase;
 import luxuriousmisfortunes.common.basic.ItemBlockBase;
 import luxuriousmisfortunes.common.entities.EntityGolemPyrite;
@@ -11,23 +10,23 @@ import luxuriousmisfortunes.common.entities.EntityNacreGhast;
 import luxuriousmisfortunes.common.entities.EntityPorcelainSpider;
 import luxuriousmisfortunes.common.entities.EntityVelvetCow;
 import luxuriousmisfortunes.common.entities.EntityVelvetSlime;
+import luxuriousmisfortunes.common.items.ItemNacreMeal;
+import luxuriousmisfortunes.common.items.ItemNacreScalpel;
+import luxuriousmisfortunes.common.items.ItemNacreSubarmor;
 import luxuriousmisfortunes.common.items.ItemPorcelainBowl;
 import luxuriousmisfortunes.common.items.ItemPorcelainJug;
-import luxuriousmisfortunes.common.items.ItemNacreMeal;
 import luxuriousmisfortunes.common.items.ItemPorcelainPlate;
-import luxuriousmisfortunes.common.items.ItemNacreScalpel;
 import luxuriousmisfortunes.common.items.ItemPyriteFishingRod;
 import luxuriousmisfortunes.common.items.ItemPyriteGum;
 import luxuriousmisfortunes.common.items.ItemSubstance;
 import luxuriousmisfortunes.common.items.ItemVelvetCookie;
-import luxuriousmisfortunes.common.items.ItemNacreSubarmor;
+import luxuriousmisfortunes.common.items.ItemVelvetPatch;
 import net.minecraft.entity.monster.EntityGhast;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntitySlime;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 
 public class ItemInit {
 
@@ -82,8 +81,8 @@ public class ItemInit {
     public static final Item CUSTARD = new ItemBase("animated_custard");
     public static final Item RUM = new ItemBase("rum_bottle");
     public static final Item COOKIE = new ItemVelvetCookie(ItemVelvetCookie.name, 10, false);
-    public static final Item SUBARMOR = new ItemNacreSubarmor(ItemNacreSubarmor.name);
-    public static final Item VELVET_PATCH = new ItemBase("velvet_patch");
+    public static final Item CROWN = new ItemNacreSubarmor(ItemNacreSubarmor.name);
+    public static final Item PATCH = new ItemVelvetPatch("velvet_patch");
 
     public static final Item GUM = new ItemPyriteGum(ItemPyriteGum.name, 4, false);
     public static final Item FISHING_ROD = new ItemPyriteFishingRod(ItemPyriteFishingRod.name);

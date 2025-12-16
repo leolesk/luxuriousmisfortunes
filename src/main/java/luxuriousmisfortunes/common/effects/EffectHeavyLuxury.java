@@ -15,7 +15,7 @@ public class EffectHeavyLuxury extends Potion{
 
     public static String name = "heavy_luxury";
 
-    protected EffectHeavyLuxury(String name) {
+    public EffectHeavyLuxury(String name) {
         super(true, 0);
 
         this.setRegistryName(Main.MODID, name);
@@ -51,7 +51,7 @@ public class EffectHeavyLuxury extends Potion{
     @Override
     public boolean isReady(int duration, int amplifier) {
 
-        return duration % 100 == 0;
+        return duration % 20 == 0;
     }
 
 

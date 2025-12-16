@@ -19,8 +19,8 @@ public class EffectInit {
     public static final Potion FORTUNES_GRACE = new EffectFortunesGrace(EffectFortunesGrace.name);
 
     public static final Potion GLUTTONY = new EffectFortunesGrace(EffectGluttony.name);
-    public static final Potion HEAVY_LUXURY = new EffectFortunesGrace(EffectHeavyLuxury.name);
-    public static final Potion MINDTRICK = new EffectFortunesGrace(EffectMindtrick.name);
-    public static final Potion PAPER_SKIN = new EffectFortunesGrace(EffectPaperSkin.name);
+    public static final Potion HEAVY_LUXURY = new EffectHeavyLuxury(EffectHeavyLuxury.name);
+    public static final Potion MINDTRICK = new EffectMindtrick(EffectMindtrick.name);
+    public static final Potion PAPER_SKIN = new EffectPaperSkin(EffectPaperSkin.name);
 
 }

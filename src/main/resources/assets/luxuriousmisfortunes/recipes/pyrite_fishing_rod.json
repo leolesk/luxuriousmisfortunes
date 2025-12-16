@@ -1,0 +1,26 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "luxuriousmisfortunes:pyrite_fishing_rod",
+    "pattern": [
+        " CR",
+        "CEC",
+        "RC "
+    ],
+    "key": {
+        "C": {
+            "item": "luxuriousmisfortunes:pyrite_crystal",
+            "data": 0
+        },
+        "R": {
+            "item": "minecraft:blaze_rod",
+            "data": 0
+        },
+        "E": {
+             "item": "minecraft:ender_eye",
+             "data": 0
+        }
+    },
+    "result": {
+        "item": "luxuriousmisfortunes:pyrite_fishing_rod"
+    }
+}

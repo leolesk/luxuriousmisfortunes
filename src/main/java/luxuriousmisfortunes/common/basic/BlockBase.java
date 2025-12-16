@@ -5,6 +5,7 @@ import luxuriousmisfortunes.init.BlockInit;
 import luxuriousmisfortunes.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 
 public class BlockBase extends Block {
@@ -14,7 +15,7 @@ public class BlockBase extends Block {
 
         this.setRegistryName(name);
         this.setTranslationKey(Main.MODID + "." + name);
-        this.setCreativeTab(Main.tabMod);
+        this.setCreativeTab(CreativeTabs.SEARCH);
 
         this.setHardness(this.blockHardness);
 

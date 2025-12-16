@@ -39,6 +39,27 @@ public class EntityNacreGhast extends EntityGhast{
     }
 
     @Override
+    protected void dropFewItems(boolean wasRecentlyHit, int lootingModifier)
+    {
+        Item item = this.getDropItem();
+
+        if (item != null)
+        {
+            int i = 1 + this.rand.nextInt(3);
+
+            if (lootingModifier > 0)
+            {
+                i += this.rand.nextInt(lootingModifier + 1);
+            }
+
+            for (int j = 0; j < i; ++j)
+            {
+                this.dropItem(item, 1);
+            }
+        }
+    }
+
+    @Override
     protected void initEntityAI()
     {
         this.tasks.addTask(5, new AIFlyLimited(this));

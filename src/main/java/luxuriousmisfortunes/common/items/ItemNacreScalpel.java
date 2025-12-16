@@ -58,18 +58,16 @@ public class ItemNacreScalpel extends ItemBase {
 
             if (toSpawn != null) {
 
-                if (world.rand.nextInt(10) > 5) {
-                    world.spawnEntity(new EntityItem(world, target.posX, target.posY, target.posZ, toSpawn));
-                    world.createExplosion(null, target.posX, (target.getEntityBoundingBox().minY + target.getEntityBoundingBox().maxY) / 2.0, target.posZ, 0, false);
+                world.spawnEntity(new EntityItem(world, target.posX, target.posY, target.posZ, toSpawn));
+                world.createExplosion(null, target.posX, (target.getEntityBoundingBox().minY + target.getEntityBoundingBox().maxY) / 2.0, target.posZ, 0, false);
 
-                    if (!playerIn.isCreative()) {
-                        stack.damageItem(1, playerIn);
-                    }
-
-                    compound.setLong("lastShearedTime", world.getTotalWorldTime());
-                    target.attackEntityAsMob(playerIn);
-                    return true;
+                if (!playerIn.isCreative()) {
+                    stack.damageItem(1, playerIn);
                 }
+
+                compound.setLong("lastShearedTime", world.getTotalWorldTime());
+                target.attackEntityAsMob(playerIn);
+                return true;
             }
         }
 

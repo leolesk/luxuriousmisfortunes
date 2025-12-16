@@ -1,0 +1,39 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "luxuriousmisfortunes:nacre_agent",
+    "pattern": [
+        "FSF",
+        "RBP",
+        "FGF"
+    ],
+    "key": {
+        "F": {
+            "item": "luxuriousmisfortunes:nacre_feather",
+            "data": 0
+        },
+        "S": {
+            "item": "minecraft:sugar",
+            "data": 0
+        },
+        "R": {
+             "item": "minecraft:redstone",
+              "data": 0
+              },
+        "P": {
+              "item": "minecraft:glowstone_dust",
+              "data": 0
+              },
+        "G": {
+              "item": "minecraft:gunpowder",
+              "data": 0
+               },
+         "B": {
+              "item": "minecraft:dye",
+              "data": 15
+              }
+    },
+    "result": {
+        "item": "luxuriousmisfortunes:nacre_agent",
+        "count": 8
+    }
+}

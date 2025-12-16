@@ -17,11 +17,10 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerItemVariants(Item item, int meta, String... names) {
-
-        for (int i = 0; i <= meta; i++) {
-            ModelBakery.registerItemVariants(item, new ResourceLocation(Main.MODID, names[i]));
+        for (String name : names) {
+            ModelBakery.registerItemVariants(item,
+                    new ResourceLocation(Main.MODID, name));
         }
-
     }
 
     @Override

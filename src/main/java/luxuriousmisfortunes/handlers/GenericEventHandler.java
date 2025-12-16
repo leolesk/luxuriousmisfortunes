@@ -59,7 +59,6 @@ public class GenericEventHandler {
 
     @SubscribeEvent
     public static void onItemExplosion(ExplosionEvent.Detonate event) {
-        Explosion explosion = event.getExplosion();
 
         List<Entity> list = event.getAffectedEntities();
 
@@ -68,9 +67,11 @@ public class GenericEventHandler {
                 EntityItem item = (EntityItem)e;
                 if (item.getItem().getItem().equals(ItemInit.COOKIE)) {
 
+                    int amount = item.getItem().getCount();
+
                     World worldIn = item.getEntityWorld();
 
-                    ItemStack stackToSpawn = new ItemStack(ItemInit.COOKIE);
+                    ItemStack stackToSpawn = new ItemStack(ItemInit.COOKIE, amount);
                     stackToSpawn.setItemDamage(1);
                     EntityItem entityToSpawn = new EntityItem(worldIn, item.posX, item.posY, item.posZ, stackToSpawn);
 
@@ -88,7 +89,7 @@ public class GenericEventHandler {
         EntityPlayer player = event.getEntityPlayer();
 
         for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
-            if (player.inventory.getStackInSlot(i).getItem().equals(ItemInit.VELVET_PATCH)) {
+            if (player.inventory.getStackInSlot(i).getItem().equals(ItemInit.PATCH)) {
                 ItemStack stack = player.inventory.getStackInSlot(i);
 
                 original.setItemDamage(original.getItemDamage() - 20);

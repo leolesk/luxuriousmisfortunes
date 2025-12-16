@@ -4,6 +4,7 @@ import luxuriousmisfortunes.api.Main;
 import luxuriousmisfortunes.init.ItemInit;
 import luxuriousmisfortunes.util.IHasModel;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemBlock;
 
 public class ItemBlockBase extends ItemBlock implements IHasModel {
@@ -13,7 +14,7 @@ public class ItemBlockBase extends ItemBlock implements IHasModel {
 
         this.setRegistryName(block.getRegistryName());
         this.setTranslationKey(block.getTranslationKey());
-        this.setCreativeTab(Main.tabMod);
+        this.setCreativeTab(CreativeTabs.SEARCH);
 
         ItemInit.ITEMS.add(this);
     }

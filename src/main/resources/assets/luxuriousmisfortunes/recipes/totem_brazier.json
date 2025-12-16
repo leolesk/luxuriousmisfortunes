@@ -1,0 +1,26 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "luxuriousmisfortunes:totem_brazier",
+    "pattern": [
+        " SN",
+        " IS",
+        "I  "
+    ],
+    "key": {
+        "N": {
+            "item": "minecraft:netherrack",
+            "data": 0
+        },
+        "S": {
+            "item": "minecraft:stone_slab",
+            "data": 0
+        },
+        "I": {
+             "item": "minecraft:iron_ingot",
+             "data": 0
+        }
+    },
+    "result": {
+        "item": "luxuriousmisfortunes:totem_brazier"
+    }
+}

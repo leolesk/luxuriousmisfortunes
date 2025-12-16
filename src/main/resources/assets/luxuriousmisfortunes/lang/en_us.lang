@@ -10,6 +10,7 @@ tile.luxuriousmisfortunes.totem_tooth_holding.name=Totem Tooth
 
 tile.luxuriousmisfortunes.totem_pole.name=Totem Pole
 tile.luxuriousmisfortunes.totem_stone.name=Totem Stone
+tile.luxuriousmisfortunes.totem_brazier.name=Totem Brazier
 
 # ITEMS
 
@@ -42,11 +43,16 @@ item.luxuriousmisfortunes.pyrite.name=Pyrite Hearth
 # GUI
 itemGroup.tabLuxuriousMisfortunes=Luxurious Misfortunes
 category.luxuriousmisfortunes=Luxurious Misfortunes
-key.luxuriousmisfortunes.put_subarmor_on=Put Subarmor On
+key.luxuriousmisfortunes.put_subarmor_on=Put The Crown On
 
 # POTION EFFECTS
 effect.fortunes_grace=Fortune's Grace
 effect.replenished=Replenished
+
+effect.gluttony=Gluttony
+effect.mindtrick=Mind Trick
+effect.paper_skin=Paper Skin
+effect.heavy_luxury=Heavy Luxury
 
 # ENTITIES
 entity.pyrite_golem.name=Pyrite Golem
@@ -57,6 +63,7 @@ entity.velvet_slime.name=Velvet Slime
 
 # TOOLTIPS
 tooltip.luxuriousmisfortunes.element_unbreakable=§5This block is a part of an unbreakable structure. Only for creative.
+tooltip.luxuriousmisfortunes.totem_brazier.description=§5[RMB] while holding End Crystal to extend the payment timer.
 
 tooltip.luxuriousmisfortunes.porcelain_plate.description=§5Pick up the cake with [Shift + RMB] while in hand.
 tooltip.luxuriousmisfortunes.porcelain_bowl.description=§5Combine with a soup in the crafting grid to fill.
@@ -64,14 +71,24 @@ tooltip.luxuriousmisfortunes.porcelain_jug.description=§5Combine with a potion 
 
 tooltip.luxuriousmisfortunes.experiment.description=§5A warm and fluffy mass with a slight hint of raw meat.
 tooltip.luxuriousmisfortunes.experiment_conducted.description=§5The mass squeaks and tries to slip out of your hands... but now it smells like Play-Doh.
-tooltip.luxuriousmisfortunes.pyrite_fishing_rod.description=§Saves tools and armor from breakage by growing into metal and precious stones.
+tooltip.luxuriousmisfortunes.velvet_patch.description=§5Saves tools and armor from breaking by growing into them on their last hit.
 
 tooltip.luxuriousmisfortunes.pyrite_gum.description=§5Allows to remain relentless while finds sugar in the inventory. Consume to activate.
 tooltip.luxuriousmisfortunes.pyrite_fishing_rod.description=§5Retrieves lost, burned and exploded items from deep waters.
 
 tooltip.luxuriousmisfortunes.nacre_scalpel.description=§5Removes vital body coverings from animals without harming them.
 tooltip.luxuriousmisfortunes.nacre_agent.description=§5Causes rapid cell division in plants resistant to conventional fertilizers.
-tooltip.luxuriousmisfortunes.nacre_crown.description=§5Gives the wearer more protection the more experienced he is.
+tooltip.luxuriousmisfortunes.nacre_crown.description=§5Gives the wearer more protection the more experienced he is. Press [M] to wear.
+
+tooltip.luxuriousmisfortunes.matter.description=Activate with [SHIFT + RMB] while in hand.
+tooltip.luxuriousmisfortunes.matter.required_mob=To be used on:
+tooltip.luxuriousmisfortunes.matter.times_used=Times used:
+tooltip.luxuriousmisfortunes.matter.time_left=Time left:
+
+tooltip.luxuriousmisfortunes.pyrite.mob_name=Iron Golem
+tooltip.luxuriousmisfortunes.velvet.mob_name=Cow & Slime
+tooltip.luxuriousmisfortunes.porcelain.mob_name=Spider
+tooltip.luxuriousmisfortunes.nacre.mob_name=Ghast
 
 # FIRST ENCOUNTER LINES
 scene.luxuriousmisfortunes.totem_persona.line_0=§oAh, who do I see! An uninvited guest. But an expected one...

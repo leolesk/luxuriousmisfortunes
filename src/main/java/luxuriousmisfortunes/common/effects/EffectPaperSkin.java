@@ -13,7 +13,7 @@ public class EffectPaperSkin extends Potion{
 
     public static String name = "paper_skin";
 
-    protected EffectPaperSkin(String name) {
+    public EffectPaperSkin(String name) {
         super(true, 0);
 
         this.setRegistryName(Main.MODID, name);

@@ -30,7 +30,7 @@ public class EffectMindtrick extends Potion{
             SoundEvents.ENTITY_SILVERFISH_AMBIENT,
     };
 
-    protected EffectMindtrick(String name) {
+    public EffectMindtrick(String name) {
         super(true, 0);
 
         this.setRegistryName(Main.MODID, name);
@@ -48,16 +48,18 @@ public class EffectMindtrick extends Potion{
 
             World world = playerIn.world;
 
-            if (world.rand.nextInt(10) < 9) {
+            if (world.rand.nextInt(365) == 0) {
                 playerIn.world.playSound(
-                        null,
+                        playerIn,
                         playerIn.getPosition(),
                         events[world.rand.nextInt(events.length)],
-                        SoundCategory.AMBIENT,
+                        SoundCategory.HOSTILE,
                         2.0F,
                         1.0F
                         );
             }
+
+            if (world.isRemote) return;
 
             int radius = 3;
 
@@ -66,21 +68,23 @@ public class EffectMindtrick extends Potion{
 
             BlockPos spawnPos = playerIn.getPosition().add(offsetX, playerIn.getYOffset(), offsetZ);
 
-            if (world.isAirBlock(spawnPos) && world.isAirBlock(spawnPos.up())) {
-                Entity mob;
+            if (world.rand.nextInt(365) == 0) {
+                if (world.isAirBlock(spawnPos) && world.isAirBlock(spawnPos.up())) {
+                    Entity mob;
 
-                int choice = world.rand.nextInt(1);
-                switch (choice) {
-                    case 0:
-                        mob = new EntityCreeper(world);
-                        break;
-                    default:
-                        mob = new EntityVex(world);
-                        break;
+                    int choice = world.rand.nextInt(2);
+                    switch (choice) {
+                        case 0:
+                            mob = new EntityCreeper(world);
+                            break;
+                        default:
+                            mob = new EntityVex(world);
+                            break;
+                    }
+
+                    mob.setPosition(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5);
+                    world.spawnEntity(mob);
                 }
-
-                mob.setPosition(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5);
-                world.spawnEntity(mob);
             }
 
         }

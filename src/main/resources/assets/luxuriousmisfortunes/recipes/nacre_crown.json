@@ -1,0 +1,30 @@
+{
+    "type": "forge:ore_shaped",
+    "group": "luxuriousmisfortunes:nacre_crown",
+    "pattern": [
+        "FBF",
+        "FCF",
+        "CSC"
+    ],
+    "key": {
+        "F": {
+            "item": "luxuriousmisfortunes:nacre_feather",
+            "data": 0
+        },
+        "B": {
+            "item": "minecraft:experience_bottle",
+            "data": 0
+        },
+        "C": {
+             "item": "minecraft:chorus_fruit_popped",
+              "data": 0
+              },
+        "S": {
+             "item": "minecraft:shulker_shell",
+             "data": 0
+              }
+    },
+    "result": {
+        "item": "luxuriousmisfortunes:nacre_crown"
+    }
+}

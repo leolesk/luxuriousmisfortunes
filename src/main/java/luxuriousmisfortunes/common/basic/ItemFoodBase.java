@@ -11,7 +11,7 @@ public class ItemFoodBase extends ItemFood implements IHasModel{
         super(amount, isWolfFood);
         this.setRegistryName(name);
         this.setTranslationKey(Main.MODID + "." + name);
-        this.setCreativeTab(Main.tabMod);
+        //        this.setCreativeTab(Main.tabMod);
 
         ItemInit.ITEMS.add(this);
     }
